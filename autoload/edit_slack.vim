@@ -2,7 +2,7 @@
 "
 " edit-slack.vim - Open slack, like a file
 "
-" Version: 0.01
+" Version: 0.81
 " Maintainer:	yaasita < https://github.com/yaasita/edit-slack.vim >
 " Last Change:	2016/12/09.
 

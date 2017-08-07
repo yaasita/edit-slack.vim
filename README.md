@@ -82,7 +82,7 @@ When displaying Unicode characters
 
     # search word
     vim slack://sw/hoge
-    vim slack://sw/from:@yamasita&on:today # replace space with &
+    vim slack://sw/from:@yamasita_on:today # replace space with _
 
 ## Mechanism
 
