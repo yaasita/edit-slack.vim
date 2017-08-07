@@ -20,34 +20,32 @@
 ### 2. download [edit-slack](https://github.com/yaasita/edit-slack) binary
 
 * Linux
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/linux-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/linux-386-edit-slack
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/linux-amd64-edit-slack
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/linux-386-edit-slack
 * FreeBSD
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/freebsd-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/freebsd-386-edit-slack
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/freebsd-amd64-edit-slack
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/freebsd-386-edit-slack
 * Windows
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/windows-amd64-edit-slack.exe
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/windows-386-edit-slack.exe
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/windows-amd64-edit-slack.exe
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/windows-386-edit-slack.exe
 * macOS
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/darwin-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.2.0/darwin-386-edit-slack
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/darwin-amd64-edit-slack
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.0/darwin-386-edit-slack
 
 
 Save binary under edit-slack.vim directory.  
 Rename the file name to edit-slack (windows user is edit-slack.exe)
 
-ex. Linux User
+example. Linux(64bit) User
 
     cd /path/to/install/directory/edit-slack.vim
-    # download binary
+    curl -L -O https://github.com/yaasita/edit-slack/releases/download/v0.8.0/linux-amd64-edit-slack
     mv linux-amd64-edit-slack edit-slack # windows user is edit-slack.exe
     chmo +x edit-slack
 
 ## Settings
 
-Get token from [slack API page](https://api.slack.com/web).
-
-[<img src="https://68.media.tumblr.com/a3f5b61ee105e7932460a1303d2b496f/tumblr_oihao1lNZW1riy4fno1_250.png">](https://api.slack.com/web#authentication)
+Get token from [slack API page](https://api.slack.com/custom-integrations/legacy-tokens).
 
 Add the token to vimrc.
 
@@ -81,6 +79,10 @@ When displaying Unicode characters
     # post
     # write it under the "=== Message ===" mark
     :w
+
+    # search word
+    vim slack://sw/hoge
+    vim slack://sw/from:@yamasita&on:today # replace space with &
 
 ## Mechanism
 
