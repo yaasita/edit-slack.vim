@@ -87,7 +87,7 @@ function! s:Search(query) "{{{
                 \ '-cache', g:yaasita_slack_cache,
                 \ '-token', g:yaasita_slack_token,
                 \ '-outfile', l:tmpfile,
-                \ 'search', "'" . substitute(l:query[1],'&', ' ', "g") . "'" ]
+                \ 'search',  shellescape(substitute(l:query[1],'_', ' ', "g")) ]
     call s:Exec_cmd(l:cmd)
     return l:tmpfile
 endfunction "}}}
