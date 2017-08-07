@@ -27,6 +27,8 @@ function! edit_slack#OpenCh(slack_url) "{{{
         let l:tmpfile = s:History('users.history', l:url)
     elseif match(l:url,'\v^slack\:\/\/pg') > -1
         let l:tmpfile = s:History('groups.history', l:url)
+    elseif match(l:url, '\v^slack\:\/\/sw') > -1
+        let l:tmpfile = s:Search(l:url)
     endif
     setlocal nomod
     exe "e "  . l:tmpfile
@@ -75,6 +77,17 @@ function! s:History(cmd, target_url) "{{{
                 \ '-token', g:yaasita_slack_token,
                 \ '-outfile', l:tmpfile,
                 \ a:cmd, l:target ]
+    call s:Exec_cmd(l:cmd)
+    return l:tmpfile
+endfunction "}}}
+function! s:Search(query) "{{{
+    let l:query = matchlist(a:query, 'slack://sw/\(.*\)')
+    let l:tmpfile = tempname()
+    let l:cmd = [ s:yaasita_slack_go_path, 
+                \ '-cache', g:yaasita_slack_cache,
+                \ '-token', g:yaasita_slack_token,
+                \ '-outfile', l:tmpfile,
+                \ 'search', "'" . substitute(l:query[1],'&', ' ', "g") . "'" ]
     call s:Exec_cmd(l:cmd)
     return l:tmpfile
 endfunction "}}}
