@@ -34,7 +34,6 @@ function! edit_slack#OpenCh(slack_url) "{{{
     exe "bw! ". l:url
     exe "f "  . l:url
     exe "bw! ". l:tmpfile
-    setlocal ft=slack
     if match(l:url,'\v^slack://../[a-zA-Z0-9\-_]+$') > -1
         call append(line('$'), "=== Message ===")
     else
@@ -43,6 +42,7 @@ function! edit_slack#OpenCh(slack_url) "{{{
     redr!
     normal! G
     setlocal nomod
+    setlocal ft=slack
 endfunction "}}}
 function! edit_slack#WriteCh(slack_url) "{{{
     let l:url = substitute(a:slack_url,"\/$","","")
