@@ -2,7 +2,7 @@
 "
 " edit-slack.vim - Open slack, like a file
 "
-" Version: 0.82
+" Version: 0.83
 " Maintainer:	yaasita < https://github.com/yaasita/edit-slack.vim >
 
 let g:yaasita_slack_cache = tempname()
@@ -31,7 +31,8 @@ function! edit_slack#OpenCh(slack_url) "{{{
     endif
     setlocal nomod
     exe "e "  . l:tmpfile
-    exe "bw! ". l:url
+    silent! exe "bw! " . a:slack_url
+    silent! exe "bw! " . l:url
     exe "f "  . l:url
     exe "bw! ". l:tmpfile
     if match(l:url,'\v^slack://../[a-zA-Z0-9\-_]+$') > -1
