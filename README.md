@@ -20,17 +20,17 @@
 ### 2. download [edit-slack](https://github.com/yaasita/edit-slack) binary
 
 * Linux
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/linux-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/linux-386-edit-slack
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-amd64-edit-slack
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-386-edit-slack
 * FreeBSD
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/freebsd-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/freebsd-386-edit-slack
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/freebsd-amd64-edit-slack
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/freebsd-386-edit-slack
 * Windows
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/windows-amd64-edit-slack.exe
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/windows-386-edit-slack.exe
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/windows-amd64-edit-slack.exe
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/windows-386-edit-slack.exe
 * macOS
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/darwin-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.1/darwin-386-edit-slack
+    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/darwin-amd64-edit-slack
+    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/darwin-386-edit-slack
 
 
 Save binary under edit-slack.vim directory.  
@@ -39,7 +39,7 @@ Rename the file name to edit-slack (windows user is edit-slack.exe)
 example. Linux(64bit) User
 
     cd /path/to/install/directory/edit-slack.vim
-    curl -L -O https://github.com/yaasita/edit-slack/releases/download/v0.8.1/linux-amd64-edit-slack
+    curl -L -O https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-amd64-edit-slack
     mv linux-amd64-edit-slack edit-slack # windows user is edit-slack.exe
     chmo +x edit-slack
 
