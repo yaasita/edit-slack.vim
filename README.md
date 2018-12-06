@@ -41,7 +41,7 @@ example. Linux(64bit) User
     cd /path/to/install/directory/edit-slack.vim
     curl -L -O https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-amd64-edit-slack
     mv linux-amd64-edit-slack edit-slack # windows user is edit-slack.exe
-    chmo +x edit-slack
+    chmod +x edit-slack
 
 ## Settings
 
