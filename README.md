@@ -1,17 +1,15 @@
 # edit-slack.vim
 
- Open slack, like a file
+open slack, like a file
 
-![demogif](https://68.media.tumblr.com/eca8562405343fe62cce8f65179c2d27/tumblr_oihg6bGRZ21riy4fno1_1280.gif)
+![demogif](https://i.imgur.com/zYs4XdX.gif)
 
-## Installation
+## installation
 
 ### 1. download vim script
 
 *  [vim-plug](https://github.com/junegunn/vim-plug)
   * `Plug 'yaasita/edit-slack.vim'`
-*  [NeoBundle](https://github.com/Shougo/neobundle.vim)
-  * `NeoBundle 'yaasita/edit-slack.vim'`
 *  [Vundle](https://github.com/gmarik/vundle)
   * `Plugin 'yaasita/edit-slack.vim'`
 *  [Vim packages](http://vimhelp.appspot.com/repeat.txt.html#packages) (since Vim 7.4.1528)
@@ -19,73 +17,78 @@
 
 ### 2. download [edit-slack](https://github.com/yaasita/edit-slack) binary
 
-* Linux
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-386-edit-slack
-* FreeBSD
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/freebsd-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/freebsd-386-edit-slack
-* Windows
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/windows-amd64-edit-slack.exe
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/windows-386-edit-slack.exe
-* macOS
-    * 64bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/darwin-amd64-edit-slack
-    * 32bit: https://github.com/yaasita/edit-slack/releases/download/v0.8.2/darwin-386-edit-slack
+* [Linux 64bit](https://github.com/yaasita/edit-slack/releases/download/v1.0.1/linux-amd64-edit-slack)
+* [Windows 64bit](https://github.com/yaasita/edit-slack/releases/download/v1.0.1/windows-amd64-edit-slack.exe)
+* [macOS intel64bit](https://github.com/yaasita/edit-slack/releases/download/v1.0.1/darwin-amd64-edit-slack)
 
+save binary to edit-slack.vim directory, and rename to edit-slack (on windows, rename to edit-slack.exe)
 
-Save binary under edit-slack.vim directory.  
-Rename the file name to edit-slack (windows user is edit-slack.exe)
-
-example. Linux(64bit) User
+example: linux user
 
     cd /path/to/install/directory/edit-slack.vim
-    curl -L -O https://github.com/yaasita/edit-slack/releases/download/v0.8.2/linux-amd64-edit-slack
-    mv linux-amd64-edit-slack edit-slack # windows user is edit-slack.exe
+    curl -L -O https://github.com/yaasita/edit-slack/releases/download/v1.0.1/linux-amd64-edit-slack
+    mv linux-amd64-edit-slack edit-slack
     chmod +x edit-slack
 
-## Settings
+### 3. settings
 
-Get token from [slack API page](https://api.slack.com/custom-integrations/legacy-tokens).
+get token from [slack app page](https://api.slack.com/apps).
 
-Add the token to vimrc.
+[youtube](https://www.youtube.com/watch?v=z9PD7-UXSbA)
 
-    let g:yaasita_slack_token = "xoxp-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx-xxxxxx"
+require scope
 
-When displaying Unicode characters
+* identify
+* channels:history
+* groups:history
+* im:history
+* mpim:history
+* channels:read
+* files:read
+* groups:read
+* im:read
+* mpim:read
+* search:read
+* users:read
+* channels:write
+* chat:write
+* files:write
+* groups:write
+
+add the token to vimrc
+
+    syntax on
+    let g:edit_slack_token = "xoxp-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx-xxxxxx"
+
+if display unicode characters
 
     set fileencodings+=utf-8
     set encoding=utf-8
 
-## Usage
+## usage
 
-![uri](http://i.imgur.com/aZnPw54.png)
-
-    # open channels/private group/users list
+    # open channels list
     vim slack://ch
-    vim slack://pg
-    vim slack://dm
     # gf command opens a chat under the cursor
-
-    # open general channel
-    vim slack://ch/general
-
-    # in the vim
-    :e slack://ch
-    :tabe slack://dm/hogeuser
-
-    # reload
-    :e
 
     # post
     # write it under the "=== Message ===" mark
     :w
 
+    # command
+    # join channel
+    :EditSlackJoin
+    # leave channel
+    :EditSlackLeave
+    # open thread
+    :EditSlackOpenReplies
+    # upload file
+    :EditSlackUploadFile
+    # download file
+    :EditSlackDownloadFile
     # search word
-    vim slack://sw/hoge
-    vim slack://sw/from:@yamasita_on:today # replace space with _
+    :EditSlackSearch
 
-## Mechanism
+## more information
 
-![mechanizm](https://68.media.tumblr.com/0aea501a67c0eb4ce83598c6fe4385fc/tumblr_oih8utLU2C1riy4fno1_500.png)
-
-(c) [gopher stickers](https://github.com/tenntenn/gopher-stickers)
+https://github.com/yaasita/edit-slack.vim/wiki
