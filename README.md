@@ -83,11 +83,11 @@ if display unicode characters
     # open thread
     :EditSlackOpenReplies
     # upload file
-    :EditSlackUploadFile
+    :EditSlackUploadFile /path/to/upfile
     # download file
-    :EditSlackDownloadFile
+    :EditSlackDownloadFile /path/to/savefile
     # search word
-    :EditSlackSearch
+    :EditSlackSearch keyword
 
 ## more information
 
